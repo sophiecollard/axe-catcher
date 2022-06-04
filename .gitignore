@@ -1,3 +1,6 @@
 */venv/
+*.egg-info
 *.pyc
+*.tar.gz
+*.whl
 secrets.sh

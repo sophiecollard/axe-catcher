@@ -1,5 +1,7 @@
 import json
-from model import Config
+from typing import Any
+
+from .model import Config
 
 def read_config(path: str) -> Config:
     raw_json = read_file_contents(path)
