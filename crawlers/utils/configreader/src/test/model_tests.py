@@ -1,7 +1,8 @@
-import sys
-sys.path += ['src/main']
 import unittest
-from model import Config, Endpoint, Url
+
+import sys
+sys.path += ['src']
+from configreader import Config, Endpoint, Url
 
 class TestEndpoint(unittest.TestCase):
 
