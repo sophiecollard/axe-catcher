@@ -70,7 +70,7 @@ You'll also find the following files under `crawlers/utils/configreader/dist`:
   * `configreader-{version_number}-py3-none-any.whl`
   * `configreader-{version_number}.tar.gz`
 
-### Adding a dependency on ConfigReader to another project
+### Adding a dependency on configreader in another project
 
 To install `configreader` in another project run:
 

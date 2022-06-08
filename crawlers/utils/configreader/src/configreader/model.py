@@ -1,4 +1,5 @@
 from attrs import define
+from collections.abc import Iterable
 from typing import Any, Callable, NewType
 
 Url = NewType('Url', str)
@@ -9,6 +10,7 @@ class Endpoint:
     name: str
     description: str
     url: Url
+    pages: Iterable[int]
     pagination_function: PaginationFunction
     expected_status: list[int]
     expected_content_type: list[str]
@@ -20,6 +22,7 @@ class Endpoint:
             name = parsed_json['name'],
             description = parsed_json['description'],
             url = Url(parsed_json['url']),
+            pages = parsed_json.get('pages', range(1, 5)),
             pagination_function = cls.decode_pagination_function_from(parsed_json['pagination']),
             expected_status = parsed_json['expected_status'],
             expected_content_type = parsed_json['expected_content_type'],

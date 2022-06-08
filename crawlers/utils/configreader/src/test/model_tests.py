@@ -13,6 +13,7 @@ class TestEndpoint(unittest.TestCase):
         self.assertEqual(returned_endpoint.name, expected_endpoint.name)
         self.assertEqual(returned_endpoint.description, expected_endpoint.description)
         self.assertEqual(returned_endpoint.url, expected_endpoint.url)
+        self.assertEqual(returned_endpoint.pages, expected_endpoint.pages)
         self.assertEqual(returned_endpoint.expected_status, expected_endpoint.expected_status)
         self.assertEqual(returned_endpoint.expected_content_type, expected_endpoint.expected_content_type)
         self.assertEqual(returned_endpoint.filters, expected_endpoint.filters)
@@ -74,6 +75,7 @@ class EndpointFixtures:
             name = 'Ibanez guitars on Yahoo Auctions',
             description = 'Yahoo! JAPAN Auction ＞ Hobbies & Crafts ＞ Musical Instruments ＞ Guitars ＞ Electric Guitars ＞ Main Units ＞ Ibanez',
             url = Url('https://buyee.jp/item/search/category/2084019025'),
+            pages = range(1, 5),
             pagination_function = lambda url, page: "{}?page={}".format(url, page),
             expected_status = [
                 200
